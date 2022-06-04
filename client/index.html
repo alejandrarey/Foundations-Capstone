@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Online Catalogue</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+ 
+
+  <body>
+
+
+    <header>
+      <img id="bg-pic" src="Assets/sea2.jfif">
+      <h1 id="tittle">THE NEIBORHOOD HUB</h1>
+  
+    </header>
+
+    <div id="text"> </div><br>
+    
+   <div id="inputs">
+
+   
+
+    <button id="complimentButton">Get a Compliment</button>
+
+    <button id="fortuneButton">Find your Fortune</button><br><br>
+
+     <button id="jokeButton">Click for a Joke</button><br><br>
+
+   
+
+   </div>
+
+    <!-- <div id="rate-joke"> 
+     From 5-1 How did you like that joke?
+    </div><br> -->
+<!-- 
+    <input type="radio" id="1" name="rating" onclick="setRating('that was a bad joke!')" /> 
+    <label for="1">1</label>
+    <input type="radio" id="2" name="rating" onclick="setRating('i didnt understand the joke!')" /> 
+    <label for="2">2</label>
+    <input type="radio" id="3" name="rating" onclick="setRating('fun enough!')" /> 
+    <label for="3">3</label>
+    <input type="radio" id="4" name="rating" onclick="setRating('that was very funny!')" /> 
+    <label for="4">4</label>
+    <input type="radio" id="5" name="rating" onclick="setRating('Goood one! I cant stop laughing')" /> 
+    <label for="5">5</label><br> -->
+
+    <br>
+
+    <div id="form-intro">Introduce any item you want to store. Don forget to include a good picture!
+    </div>
+
+          <form>  
+        <input 
+            type='text'
+            id="joke"
+            placeholder="Insert an item you want to recommend or share with our community"/>
+        <input 
+            type='text'
+            id="rate"
+            placeholder='Include the a dollar value for the item'/>
+        <input 
+            type='text'
+            id="img"
+            placeholder='Paste an image URL'/>
+        <button>Drop a new item</button>
+     </form>
+    
+    
+  
+   
+
+
+
+
+    <section id="jokes-container"></section>
+   
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+      document.getElementById("complimentButton").onclick = function () {
+        axios.get("http://localhost:4000/api/compliment/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+
+      document.getElementById("fortuneButton").onclick = function () {
+        axios.get("http://localhost:4000/api/fortune/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+
+         
+
+      };
+
+      document.getElementById("jokeButton").onclick = function () {
+        axios.get("http://localhost:4000/api/joke/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+
+         
+
+      };
+
+      window.onload = function() {
+            
+            document.getElementById("text").textContent="Looking to buy items for the Summer? Check out your neighbors' deals!";
+      };
+
+
+      function setRating(val){
+      alert(val);
+     }
+    </script>
+     
+    
+  
+   
+
+  </body>
+</html>

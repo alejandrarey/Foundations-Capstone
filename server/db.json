@@ -1,0 +1,55 @@
+[
+    {
+      "id": 1,
+      "joke": "Two bytes meet.  The first byte asks, Are you ill? The second byte replies, No, just feeling a bit off.",
+      "rate": 4,
+      "imageURL" : "https://www.rei.com/media/c51a7224-ebb7-40fc-a6a0-b6086c82100d?size=784x588"
+    },
+    {
+      "id": 2,
+      "joke": "Q. How did the programmer die in the shower?  A. He read the shampoo bottle instructions: Lather. Rinse. Repeat",
+      "rate": 5,
+      "imageURL" : "https://m.media-amazon.com/images/I/61cmbX4CyXL._AC_SX679_.jpg"
+    },
+    {
+      "id": 3,
+      "joke": "Knock, knock.  who is there?    very long pause….     Java.",
+      "rate": 5,
+      "imageURL" : "https://target.scene7.com/is/image/Target/GUEST_577530b8-92a6-4b2e-b7dc-6be1c4efb14e"
+    },
+
+    {
+        "id": 4,
+        "joke": "How many programmers does it take to change a light bulb? None, It is a hardware problem",
+        "rate": 3,
+        "imageURL" : "https://m.media-amazon.com/images/I/71mv+gMU-WL._AC_SX679_.jpg"
+      },
+
+      {
+        "id": 5,
+        "joke": "Debugging: Removing the needles from the haystack.",
+        "rate": 3,
+        "imageURL" : "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRJ-s869jshiklnlSmu-RIA2V-9FD-c6bolA2tMRFKucTujUG74nCG6JFIWxNOgnr0-Md7OB4YRy20xCge0VVE05F7RBNIKEwvJdtQFby4&usqp=CAE"
+      },
+
+      {
+        "id": 6,
+        "joke": "I just saw my life flash before my eyes and all I could see was a close tag…",
+        "rate": 3,
+        "imageURL" : "https://s7d9.scene7.com/is/image/JCPenney/DP0325202213004199M?resmode=sharp2&op_sharpen=1&wid=550&hei=550"
+      },
+
+      {
+        "id": 7,
+        "joke": "There are only 10 kinds of people in this world: those who know binary and those who do not",
+        "rate": 2,
+        "imageURL" : "https://m.media-amazon.com/images/I/91nQScfvmfL._AC_SX679_.jpg"
+      },
+
+      {
+        "id": 8,
+        "joke": "There are only 10 kinds of people in this world: those who know binary and those who do not",
+        "rate": 2,
+        "imageURL" : "https://m.media-amazon.com/images/I/81Zwks-T2YL._AC_SX679_.jpg"
+      }
+  ]

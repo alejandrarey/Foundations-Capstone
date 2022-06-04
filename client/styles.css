@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #F5FFFA;
+    /* display: flex;  */
+
+  }
+
+  #bg-pic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 2000px;
+    border-radius: 0%;
+    position: relative;
+    margin: 0%;
+  }
+  
+  #tittle  {
+    /* height: 80px; 
+    display: center; 
+    justify-content: stretch; 
+    align-items: stretch;
+    color: darkslategray;
+    font-family: ShopifySans, Helvetica, Arial, sans-serif;
+    font-weight: 800;
+    color: #212326; */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+
+  }
+
+  #inputs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #form-intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+
+  }
+
+  #text {
+    background-color: #F5FFFA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  
+  
+  main {
+    display: flex; 
+    justify-content: center;
+
+  }
+  
+  form {
+    /* width: 800px; */
+    height: 400px;
+    background-color: #FFF5EE;
+    position: relative;
+    display: flex; 
+    justify-content: space-evenly; 
+    align-items: center;
+    margin: 75px;
+    border-radius: 1%;
+    flex-flow: column wrap;
+  }
+  
+  button {
+    background-color: #ffffff;
+    width: 200px;
+    height: 75px;
+    color: #11114E;
+    border-radius: 2%;
+    margin: 5px;
+  }
+  
+  input[type='text'] {
+    width: 75%;
+    height: 30px;
+    border: none;
+    border-bottom: 2px solid #232323;
+    color: #232323;
+    background-color: snow;
+  }
+  
+  #rate-container {
+    width: 85%;
+  }
+  
+  #radio-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  #jokes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .joke-cover-image {
+    width: 300px; 
+    height: 300px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  
+  .joke-card {
+    background-color: #E0FFFF;
+    width: 300px;
+    margin: 20px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  
+  .joke-joke {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+  
+  .joke-rate {
+    font-size: 15px;
+    margin: 5px 0;
+  }
+  
+  .btns-container {
+    width: 100%; 
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5px;
+  }
+  
+  .btns-container > button {
+    width: 30px;
+    border-radius: 50%;
+  }
