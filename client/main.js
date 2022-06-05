@@ -1,61 +1,71 @@
-const jokesContainer = document.querySelector('#jokes-container')
+const merchContainer = document.querySelector('#merch-container')
 const form = document.querySelector('form')
 
-const baseURL = `http://localhost:4000/api/jokes`
+const baseURL = `http://localhost:4000/api/merch`
 
-const jokesCallback = ({ data: jokes }) => displayJokes(jokes)
+const merchCallback = ({ data: merch }) => displayMerch(merch)
+
 const errCallback = err => console.log(err)
 
-const getJokes = () => axios.get(baseURL).then(jokesCallback).catch(errCallback)
-const createJoke = body => axios.post(baseURL, body).then(jokesCallback).catch(errCallback)
-const deleteJoke = id => axios.delete(`${baseURL}/${id}`).then(jokesCallback).catch(errCallback)
-const updateJoke = (id, type) => axios.put(`${baseURL}/${id}`, {type}).then(jokesCallback).catch(errCallback)
+const getMerch = () => axios.get(baseURL).then(merchCallback).catch(errCallback)
+const createItem = body => axios.post(baseURL, body).then(merchCallback).catch(errCallback)
+const deleteItem = id => axios.delete(`${baseURL}/${id}`).then(merchCallback).catch(errCallback)
+const updateItem = (id, type) => axios.put(`${baseURL}/${id}`, {type}).then((data) => {alert("Buyer has been notified of offer"); merchCallback(data)}).catch(errCallback)
 
 function submitHandler(e) {
     e.preventDefault()
 
-    let joke = document.querySelector('#joke')
-    let rate = document.querySelector('#rate')
+    let item = document.querySelector('#item')
+    let price = document.querySelector('#price')
     let imageURL = document.querySelector('#img')
+    let likes = 0
 
     let bodyObj = {
-        joke: joke.value,
-        rate: rate.value, 
-        imageURL: imageURL.value
+        item: item.value,
+        price: price.value, 
+        imageURL: imageURL.value,
+        likes: likes
     }
 
-    createJoke(bodyObj)
+    createItem(bodyObj)
 
-    joke.value = ''
-    rate.value = ''
+    item.value = ''
+    price.value = ''
     imageURL.value = ''
+    likes = 0
 }
 
-function createJokeCard(joke) {
-    const jokeCard = document.createElement('div')
-    jokeCard.classList.add('joke-card')
+function createItemCard(item) {
+    const itemCard = document.createElement('div')
+    itemCard.classList.add('item-card')
 
-    jokeCard.innerHTML = `<img alt='joke cover image' src=${joke.imageURL} class="joke-cover-image"/>
-    <p class="joke">${joke.joke}</p>
+    itemCard.innerHTML = `<img alt='item cover image' src=${item.imageURL} class="item-cover-image"/>
+    <p class="item">${item.item}</p>
+    <div class="btns-container">       
+
+        <p class="item-price"> Up to $${item.price}</p>
+
+        </div>
     <div class="btns-container">
-        <button onclick="updateJoke(${joke.id}, 'minus')">-</button>
-        <p class="joke-rate">${joke.rate}</p>
-        <button onclick="updateJoke(${joke.id}, 'plus')">+</button>
-    </div>
-    <button onclick="deleteJoke(${joke.id})">delete</button>
+    <button onclick="updateItem(${item.id}, 'plus')">Bidders</button>
+    <p class="item-likes">${item.likes}</p>
+    
+</div>
+    <button onclick="deleteItem(${item.id})">Remove - Found it!</button>
     `
 
 
-    jokesContainer.appendChild(jokeCard)
+    merchContainer.appendChild(itemCard)
 }
 
-function displayJokes(arr) {
-    jokesContainer.innerHTML = ``
+function displayMerch(arr) {
+    merchContainer.innerHTML = ``
     for (let i = 0; i < arr.length; i++) {
-        createJokeCard(arr[i])
+        createItemCard(arr[i])
+        
     }
 }
 
 form.addEventListener('submit', submitHandler)
 
-getJokes()
+getMerch()

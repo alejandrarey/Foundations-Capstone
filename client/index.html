@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Online Catalogue</title>
+    <title>U-TURN MP</title>
     <link rel="stylesheet" href="styles.css">
+   
   </head>
 
  
@@ -11,56 +12,30 @@
 
 
     <header>
-      <img id="bg-pic" src="Assets/sea2.jfif">
-      <h1 id="tittle">THE NEIBORHOOD HUB</h1>
+      <img id="bg-pic" src="Assets/bg1.jpg">
+      
   
     </header>
-
+    <h1 id="tittle">U-TURN NEIGHBORHOOD MARKETPLACE </h1>
     <div id="text"> </div><br>
     
-   <div id="inputs">
-
    
-
-    <button id="complimentButton">Get a Compliment</button>
-
-    <button id="fortuneButton">Find your Fortune</button><br><br>
-
-     <button id="jokeButton">Click for a Joke</button><br><br>
-
    
-
-   </div>
-
-    <!-- <div id="rate-joke"> 
-     From 5-1 How did you like that joke?
-    </div><br> -->
-<!-- 
-    <input type="radio" id="1" name="rating" onclick="setRating('that was a bad joke!')" /> 
-    <label for="1">1</label>
-    <input type="radio" id="2" name="rating" onclick="setRating('i didnt understand the joke!')" /> 
-    <label for="2">2</label>
-    <input type="radio" id="3" name="rating" onclick="setRating('fun enough!')" /> 
-    <label for="3">3</label>
-    <input type="radio" id="4" name="rating" onclick="setRating('that was very funny!')" /> 
-    <label for="4">4</label>
-    <input type="radio" id="5" name="rating" onclick="setRating('Goood one! I cant stop laughing')" /> 
-    <label for="5">5</label><br> -->
 
     <br>
 
-    <div id="form-intro">Introduce any item you want to store. Don forget to include a good picture!
+    <div id="form-intro">Tell me what you want, and wait for the best offer!!!
     </div>
 
           <form>  
         <input 
             type='text'
-            id="joke"
-            placeholder="Insert an item you want to recommend or share with our community"/>
+            id="item"
+            placeholder="Describe what you are looking for"/>
         <input 
             type='text'
-            id="rate"
-            placeholder='Include the a dollar value for the item'/>
+            id="price"
+            placeholder='Insert the maximun amount you are willing to pay for this item'/>
         <input 
             type='text'
             id="img"
@@ -75,57 +50,50 @@
 
 
 
-    <section id="jokes-container"></section>
+    <section id="merch-container"></section>
    
 
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
     <script>
-      document.getElementById("complimentButton").onclick = function () {
-        axios.get("http://localhost:4000/api/compliment/")
-            .then(function (response) {
-              const data = response.data;
-              alert(data);
-            });
-      };
-
-      document.getElementById("fortuneButton").onclick = function () {
-        axios.get("http://localhost:4000/api/fortune/")
-            .then(function (response) {
-              const data = response.data;
-              alert(data);
-            });
-
-         
-
-      };
-
-      document.getElementById("jokeButton").onclick = function () {
-        axios.get("http://localhost:4000/api/joke/")
-            .then(function (response) {
-              const data = response.data;
-              alert(data);
-            });
-
-         
-
-      };
+    
 
       window.onload = function() {
             
-            document.getElementById("text").textContent="Looking to buy items for the Summer? Check out your neighbors' deals!";
+            document.getElementById("text").textContent="Reverse Buy What You Want!";
       };
 
 
-      function setRating(val){
-      alert(val);
-     }
+     
     </script>
      
-    
-  
-   
+     <footer id="inputs">
+     <div id="price-item"> 
+     Did you find this useful? How would you rate the App? (5 is the BEST!)
+    </div>
+    <br>
+
+    <div id="app-rating">
+
+    <input type="radio" id="1" name="rating" onclick="setRating('Thank you! We will work on improvements!')" /> 
+    <label for="1">1</label>
+    <input type="radio" id="2" name="rating" onclick="setRating('Thank you! Your inputs are important!')" /> 
+    <label for="2">2</label>
+    <input type="radio" id="3" name="rating" onclick="setRating('Thanks! Fair and we will be better!')" /> 
+    <label for="3">3</label>
+    <input type="radio" id="4" name="rating" onclick="setRating('Thanks! We are glad you find this useful!')" />
+    <label for="4">4</label> 
+    <input type="radio" id="5" name="rating" onclick="setRating('AWESOME! Share with friends!')" /> 
+    <label for="5">5</label><br>
+
+  </div>
+  <script>
+  function setRating(val){
+    alert(val);
+   }
+  </script>
+</footer>
 
   </body>
 </html>

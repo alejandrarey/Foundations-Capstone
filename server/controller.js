@@ -1,48 +1,46 @@
-const jokes = require('./db.json')
+const merch = require('./db.json')
 let globalId = 9
+let likes = 0
 
 module.exports = {
 
-    getJokes: (req, res) => res.status(200).send(jokes),
-    createJoke: (req, res) => {
-        let { joke, rate, imageURL } = req.body
-        let newJoke = {
+    getMerch: (req, res) => res.status(200).send(merch),
+    createItem: (req, res) => {
+        let { item, price, imageURL, likes } = req.body
+        let newItem = {
             id: globalId,
-            joke, 
-            rate,
-            imageURL
+            item, 
+            price,
+            imageURL,
+            likes
         }
-        jokes.push(newJoke)
-        res.status(200).send(jokes)
+        merch.push(newItem)
+        res.status(200).send(merch)
         globalId++
     },
-    updateJoke: (req, res) => {
+    updateItem: (req, res) => {
         let { id } = req.params
         let { type } = req.body
-        let index = jokes.findIndex(elem => +elem.id === +id)
+        let index = merch.findIndex(elem => +elem.id === +id)
 
-        if (jokes[index].rate <= 1 && type === 'minus') {
-            jokes[index].rate = 1
-            res.status(200).send(jokes)
-        } 
-        else if (jokes[index].rate >= 5 && type === 'plus') {
-            jokes[index].rate = 5
-            res.status(200).send(jokes)
-        }
-        else if (type === 'plus') {
-            jokes[index].rate += 1
-            res.status(200).send(jokes)
-        } else if (type === 'minus') {
-            jokes[index].rate -= 1
-            res.status(200).send(jokes)
+        if (type === 'plus') {
+            merch[index].likes += 1
+            res.status(200).send(merch)
+
+            
+
+           
+
+
+
         } else {
             res.sendStatus(400)
         }
     },
-    deleteJoke: (req, res) => {
-        let index = jokes.findIndex(elem => elem.id === +req.params.id)
-        jokes.splice(index, 1)
-        res.status(200).send(jokes)
+    deleteItem: (req, res) => {
+        let index = merch.findIndex(elem => elem.id === +req.params.id)
+        merch.splice(index, 1)
+        res.status(200).send(merch)
     }
 
 
